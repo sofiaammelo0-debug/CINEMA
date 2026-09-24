@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CINE+ | Login</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="perfil.css">
+</head>
+<body>
+    <main class="login-container">
+        <a href="index.html" class="back-button">
+                <i class="bi bi-arrow-left"></i>
+                VOLTAR
+            </a>
+        <div class="logo">
+            <h1>CINE+</h1>
+            <p>Seu cinema favorito</p>
+        </div>
+        <div class="titulo">
+            <h2>Entrar</h2>
+            <p>Acesse sua conta para continuar</p>
+        </div>
+        <form id="loginForm">
+            <div class="campo">
+                <label for="email">E-mail</label>
+
+                <div class="input-box">
+
+                    <i class="bi bi-envelope"></i>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Digite seu e-mail"
+                        required>
+
+                </div>
+
+            </div>
+
+            <div class="campo">
+
+                <label for="senha">Senha</label>
+
+                <div class="input-box">
+
+                    <i class="bi bi-lock"></i>
+
+                    <input
+                        type="password"
+                        id="senha"
+                        placeholder="Digite sua senha"
+                        required>
+
+                    <i
+                        class="bi bi-eye mostrar-senha"
+                        id="mostrarSenha">
+                    </i>
+
+                </div>
+
+            </div>
+
+            <div class="opcoes">
+
+                <label class="lembrar">
+
+                    <input type="checkbox">
+
+                    Lembrar de mim
+
+                </label>
+
+                <a href="#" id="esqueciSenha">
+                    Esqueci minha senha
+                </a>
+
+            </div>
+
+            <button
+                type="submit"
+                class="btn btn-entrar">
+
+                ENTRAR
+
+            </button>
+
+        </form>
+
+        <div class="divisoria">
+            OU
+        </div>
+        <button
+            type="button"
+            class="btn btn-cadastro"
+            id="abrirCadastro">
+
+            <i class="bi bi-person-plus"></i>
+
+            CRIAR CONTA
+
+        </button>
+
+        <div class="rodape">
+            © 2026 CINE+ — Todos os direitos reservados.
+        </div>
+
+    </main>
+
+    <div
+        class="modal"
+        id="modalCadastro">
+
+        <div class="modal-conteudo">
+
+            <div class="modal-topo">
+
+                <h2>Criar conta</h2>
+
+                <button
+                    type="button"
+                    class="fechar"
+                    id="fecharCadastro">
+
+                    <i class="bi bi-x-lg"></i>
+
+                </button>
+
+            </div>
+
+            <form id="cadastroForm">
+
+                <div class="campo">
+
+                    <label for="nome">
+                        Nome completo
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="bi bi-person"></i>
+
+                        <input
+                            type="text"
+                            id="nome"
+                            placeholder="Digite seu nome completo"
+                            required>
+
+                    </div>
+
+                </div>
+
+                <div class="campo">
+
+                    <label for="emailCadastro">
+                        E-mail
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="bi bi-envelope"></i>
+
+                        <input
+                            type="email"
+                            id="emailCadastro"
+                            placeholder="Digite seu e-mail"
+                            required>
+
+                    </div>
+
+                </div>
+
+                <div class="campo">
+
+                    <label for="telefone">
+                        Número de telefone
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="bi bi-telephone"></i>
+
+                        <input
+                            type="tel"
+                            id="telefone"
+                            placeholder="(00) 00000-0000"
+                            maxlength="15"
+                            required>
+
+                    </div>
+
+                </div>
+
+                <div class="campo">
+
+                    <label for="senhaCadastro">
+                        Senha
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="bi bi-lock"></i>
+
+                        <input
+                            type="password"
+                            id="senhaCadastro"
+                            placeholder="Crie uma senha"
+                            required>
+
+                    </div>
+
+                </div>
+
+                <div class="campo">
+
+                    <label for="confirmarSenha">
+                        Confirmar senha
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="bi bi-shield-lock"></i>
+
+                        <input
+                            type="password"
+                            id="confirmarSenha"
+                            placeholder="Digite a senha novamente"
+                            required>
+
+                    </div>
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="btn btn-entrar">
+
+                    CRIAR CONTA
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script src="perfil.js"></script>
+
+</body>
+
+</html>
