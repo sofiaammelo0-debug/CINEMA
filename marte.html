@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CINE+ | Avatar: A Lenda de Aang</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="cine-header">
+
+        <div class="container header-container">
+
+            <div class="desktop-header d-none d-lg-block">
+
+                <div class="header-top">
+
+                    <a href="index.html" class="logo" aria-label="Página inicial">
+                        <img src="img/LOGO (1).png" alt="CINE+">
+                    </a>
+
+                    <div class="header-links">
+
+                        <a href="rank.html">ARRECADAÇÃO</a>
+                        <a href="rank.html">MAIS ASSISTIDOS</a>
+                        
+                        
+
+                        <div class="header-icons">
+
+                            
+
+                            <a href="#" class="login">
+                                <i class="bi bi-person"></i>
+
+                            </a>
+
+                            <a href="#" aria-label="Atendimento">
+                                <i class="bi bi-chat-left-dots"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <nav class="bottom-nav" aria-label="Navegação principal">
+                    <a href="index.html">FILMES</a>
+                    <a href="faturamento.html">FATURAMENTO</a>
+                    
+                    
+                </nav>
+
+            </div>
+
+            <div class="mobile-header d-flex d-lg-none align-items-center justify-content-between">
+
+                <button class="menu-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileOffcanvas"
+                    aria-controls="mobileOffcanvas" aria-label="Abrir menu">
+
+                    <i class="bi bi-list"></i>
+
+                </button>
+
+                <a href="index.html" class="logo" aria-label="Página inicial">
+                    <img src="img/LOGO (1).png" alt="CINE+">
+                </a>
+
+                <div class="mobile-icons">
+
+                    <a href="#">
+                        <i class="bi bi-search"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="bi bi-person"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="bi bi-chat-left-dots"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main class="movie-details">
+
+        <div class="container">
+
+            <a href="index.html" class="back-button">
+                <i class="bi bi-arrow-left"></i>
+                VOLTAR
+            </a>
+
+            <div class="movie-details-content">
+
+                <div class="movie-details-image">
+                    <img src="img/MARTE_UM.PNG" alt="MARTE UM">
+                </div>
+
+                <div class="movie-details-info">
+
+                    <h1>MARTE UM</h1>
+
+                    <div class="movie-details-meta">
+                        <span>Drama</span>
+                        <span>115m</span>
+                        <span class="age-rating age-16">16</span>
+                    </div>
+
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo dolore commodi omnis reprehenderit
+                        soluta dolor dolores animi praesentium accusantium vel totam rem consectetur eum dignissimos
+                        fugit aliquam impedit, velit minus.
+                    </p>
+
+                    <div class="movie-buttons">
+
+                        <button class="movie-session-button" id="buyTicketButton" type="button" disabled>
+                     COMPRAR INGRESSO
+                        </button>
+
+                        <button class="movie-price-button" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#pricesOffcanvas" aria-controls="pricesOffcanvas">
+                            PREÇOS
+                        </button>
+
+                    </div>
+
+                    <hr class="movie-divider">
+
+                    <div class="session-type">
+
+                        <label for="sessionType">
+                            TIPO DE SESSÃO
+                        </label>
+
+                        <select class="form-select" id="sessionType">
+                            <option selected>Selecione o tipo de sessão</option>
+                            <option value="2D">2D</option>
+                            <option value="3D">3D</option>
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <div class="offcanvas offcanvas-start mobile-offcanvas" tabindex="-1" id="mobileOffcanvas"
+        aria-labelledby="mobileOffcanvasLabel">
+
+        <div class="offcanvas-header">
+
+            <a href="index.html" class="logo" id="mobileOffcanvasLabel" aria-label="Página inicial">
+
+                <img src="img/LOGO (1).png" alt="CINE+">
+
+            </a>
+
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                aria-label="Fechar menu">
+            </button>
+
+        </div>
+
+        <div class="offcanvas-body">
+
+            <nav class="mobile-nav" aria-label="Navegação mobile">
+
+                <a href="index.html">
+                    <i class="bi bi-film"></i>
+                    FILMES
+                </a>
+
+                <a href="faturamento.html">FATURAMENTO</a>
+                
+
+                <a href="#">
+                    <i class="bi bi-ticket-detailed-fill"></i>
+                    
+                </a>
+
+                <hr>
+
+                <a href="rank.html">ARRECADAÇÃO</a>
+                <a href="rank.html">MAIS ASSISTIDOS</a>
+                
+                
+
+            </nav>
+
+        </div>
+
+    </div>
+
+    <div class="offcanvas offcanvas-end prices-offcanvas" tabindex="-1" id="pricesOffcanvas"
+        aria-labelledby="pricesOffcanvasLabel">
+        <div class="offcanvas-header">
+
+            <h2 id="pricesOffcanvasLabel">
+                PREÇOS PARA 23.09.2026
+            </h2>
+
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Fechar">
+            </button>
+
+        </div>
+
+        <div class="offcanvas-body">
+
+            <div class="price-movie">
+
+                <div class="price-movie-poster">
+                    <img src="img/MARTE_UM.PNG">
+                </div>
+
+                <div class="price-movie-name">
+                    MARTE UM
+                </div>
+
+            </div>
+
+
+            <div class="price-category">
+
+                <h3>PROMOCIONAL</h3>
+
+                <p>
+                    Ingresso promocional válido conforme as condições
+                    disponíveis para a sessão selecionada.
+                </p>
+
+                
+
+            </div>
+
+
+            <div class="price-divider"></div>
+
+
+            <div class="price-category">
+
+                <h3>INTEIRA</h3>
+
+                <p>
+                    Ingresso com valor integral para espectadores
+                    que não possuem direito à meia-entrada.
+                </p>
+
+                
+
+            </div>
+
+
+            <div class="price-divider"></div>
+
+
+            <div class="price-category">
+
+                <h3>MEIA-ENTRADA</h3>
+
+                <p>
+                    Valor destinado aos espectadores que possuem
+                    direito à meia-entrada, conforme a legislação vigente.
+                </p>
+
+                
+
+            </div>
+
+
+            <div class="price-divider"></div>
+
+
+            <div class="price-category">
+
+                <h3>IDOSO</h3>
+
+                <p>
+                    Condição destinada aos espectadores que atendem
+                    aos requisitos previstos para essa categoria.
+                </p>
+
+                
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+        </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous">
+</script>
+
+<script>
+
+const sessionType = document.getElementById("sessionType");
+const buyTicketButton = document.getElementById("buyTicketButton");
+
+if (sessionType && buyTicketButton) {
+
+    sessionType.addEventListener("change", function () {
+
+        if (this.value !== "") {
+
+            buyTicketButton.disabled = false;
+
+        } else {
+
+            buyTicketButton.disabled = true;
+
+        }
+
+    });
+
+    buyTicketButton.addEventListener("click", function () {
+
+        const filme = document.querySelector(".movie-details-info h1").textContent.trim();
+
+        const poster = document.querySelector(".movie-details-image img").getAttribute("src");
+
+        const tipoSessao = sessionType.value.toUpperCase();
+
+        localStorage.setItem("filmeSelecionado", filme);
+        localStorage.setItem("posterSelecionado", poster);
+        localStorage.setItem("sessionType", tipoSessao);
+
+        window.location.href = "ingresso.html";
+
+    });
+
+}
+
+</script>
+</body>
+
+</html>
