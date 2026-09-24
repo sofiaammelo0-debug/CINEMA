@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CINE+ | Mais Assistidos</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="cine-header">
+        <div class="container header-container">
+            <div class="desktop-header d-none d-lg-block">
+                <div class="header-top">
+                    <a href="#" class="logo" aria-label="Página inicial">
+                        <img src="img/LOGO (1).png" alt="">
+                    </a>
+                    <div class="header-links">
+                        <a href="rank.html">ARRECADAÇÃO</a>
+                        <a href="rank.html">MAIS ASSISTIDOS</a>
+
+                        <div class="header-icons">
+                            <a href="#" class="login">
+                                <i class="bi bi-person"></i>
+                            </a>
+                            <a href="#" aria-label="Atendimento">
+                                <i class="bi bi-chat-left-dots"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <nav class="bottom-nav" aria-label="Navegação principal">
+                    <a href="index.html">FILMES</a>
+                    <a href="faturamento.html">FATURAMENTO</a>
+
+                    
+                </nav>
+            </div>
+            <div class="mobile-header d-flex d-lg-none align-items-center justify-content-between">
+                <button class="menu-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileOffcanvas"
+                    aria-controls="mobileOffcanvas" aria-label="Abrir menu">
+                    <i class="bi bi-list"></i>
+                </button>
+                <a href="#" class="logo" aria-label="Página inicial">
+                    <img src="img/LOGO (1).png">
+                </a>
+                <div class="mobile-icons">
+                    <a href="#">
+                        <i class="bi bi-search"></i>
+                    </a>
+                    <a href="#">
+                        <i class="bi bi-person"></i>
+                    </a>
+                    <a href="#">
+                        <i class="bi bi-chat-left-dots"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <div
+        class="offcanvas offcanvas-start mobile-offcanvas"
+        tabindex="-1"
+        id="mobileOffcanvas">
+
+        <div class="offcanvas-header">
+
+            <a href="index.html" class="logo">
+
+                <img src="img/LOGO (1).png" alt="CINE+">
+
+            </a>
+
+            <button
+                type="button"
+                class="btn-close btn-close-white"
+                data-bs-dismiss="offcanvas"
+                aria-label="Fechar">
+            </button>
+
+        </div>
+
+
+        <div class="offcanvas-body">
+
+            <nav class="mobile-nav">
+
+                <a href="index.html">
+                    <i class="bi bi-film"></i>
+                    FILMES
+                </a>
+
+                <a href="#">
+                    <i class="bi bi-cash-stack"></i>
+                    FATURAMENTO
+                </a>
+
+                <a href="#">
+                    <i class="bi bi-ticket-perforated"></i>
+                    SESSÕESB
+                </a>
+
+                <hr>
+
+                <a href="#">
+                    <i class="bi bi-graph-up"></i>
+                    ARRECADAÇÃO
+                </a>
+
+                <a href="rank.html">
+                    <i class="bi bi-trophy"></i>
+                    MAIS ASSISTIDOS
+                </a>
+
+            </nav>
+
+        </div>
+
+    </div>
+
+
+    <main class="ranking-page">
+        <div class="container ranking-container">
+            <a href="index.html" class="back-button">
+                <i class="bi bi-arrow-left"></i>
+                VOLTAR
+            </a>
+
+            <div class="ranking-page-header">
+
+                <span class="ranking-mini-title">
+                    CINE+
+                </span>
+
+                <h1>
+                    <i class="bi bi-trophy-fill"></i>
+                    RANKING DE FILMES
+                </h1>
+
+                <p>
+                    Confira os filmes organizados de acordo com
+                    o valor total de bilheteria.
+                </p>
+
+            </div>
+
+
+            <section class="ranking-list-section">
+
+                <div class="ranking-header">
+
+                    <div>
+
+                        <span class="ranking-mini-title">
+                            BILHETERIA
+                        </span>
+
+                        <h2>
+                            <i class="bi bi-bar-chart-fill"></i>
+                            MAIS ASSISTIDOS
+                        </h2>
+
+                    </div>
+
+
+                    <div class="ranking-count">
+
+                        <strong id="contador">
+                            0
+                        </strong>
+
+                        <small>
+                            FILMES
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div id="listaFilmes">
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <footer class="cine-footer">
+
+        <div class="container">
+
+            <div class="footer-top">
+
+                <div class="footer-brand">
+
+                    <p>
+                        Acompanhe as novidades do CINE+.
+                    </p>
+
+                </div>
+
+
+                <div class="social">
+
+                    <strong>
+                        SIGA-NOS
+                    </strong>
+
+                    <a href="#" aria-label="Instagram">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+
+                    <a href="#" aria-label="Twitter">
+                        <i class="bi bi-twitter-x"></i>
+                    </a>
+
+                    <a href="#" aria-label="YouTube">
+                        <i class="bi bi-youtube"></i>
+                    </a>
+
+                    <a href="#" aria-label="Facebook">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+
+                    <a href="#" aria-label="LinkedIn">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <div>
+
+                    <h5>FILMES</h5>
+
+                    <a href="index.html">
+                        Filmes em cartaz
+                    </a>
+
+                    <a href="#">
+                        Em breve
+                    </a>
+
+                    <a href="#">
+                        Pré-venda
+                    </a>
+
+                </div>
+
+
+                <div>
+
+                    <h5>FATURAMENTO</h5>
+
+                    <a href="#">
+                        Faturamento
+                    </a>
+
+                    <a href="#">
+                        Relatórios
+                    </a>
+
+                    <a href="#">
+                        Dados de bilheteria
+                    </a>
+
+                </div>
+
+
+                <div>
+
+                    <h5>SESSÕESB</h5>
+
+                    <a href="#">
+                        Sobre o programa
+                    </a>
+
+                    <a href="#">
+                        SessõesB Fan
+                    </a>
+
+                    <a href="#">
+                        SessõesB Plus
+                    </a>
+
+                    <a href="#">
+                        SessõesB Black
+                    </a>
+
+                </div>
+
+
+                <div>
+
+                    <h5>ARRECADAÇÃO</h5>
+
+                    <a href="#">
+                        Arrecadação
+                    </a>
+
+                    <a href="#">
+                        Reserva de sala
+                    </a>
+
+                    <a href="#">
+                        Vendas
+                    </a>
+
+                </div>
+
+
+                <div>
+
+                    <h5>MAIS ASSISTIDOS</h5>
+
+                    <a href="rank.html">
+                        Filmes mais assistidos
+                    </a>
+
+                    <a href="rank.html">
+                        Ranking semanal
+                    </a>
+
+                    <a href="rank.html">
+                        Histórico
+                    </a>
+
+                </div>
+
+
+                <div>
+
+                    <h5>CINE+</h5>
+
+                    <a href="#">
+                        Sobre o CINE+
+                    </a>
+
+                    <a href="#">
+                        Acessibilidade
+                    </a>
+
+                    <a href="#">
+                        Trabalhe conosco
+                    </a>
+
+                    <a href="#">
+                        Contato
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <span>
+                    © SOFIA MELO & ANA CLAUDIA - 2026 - TÉCNICO EM INFORMÁTICA
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="script-rank.js"></script>
+
+</body>
+
+</html>
