@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CINE+ | Comprar Ingresso</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0d0d0d;
+            color: #ffffff;
+            font-family: Arial, Helvetica, sans-serif;
+            min-height: 100vh;
+        }
+
+        header {
+            height: 68px;
+            background: #050505;
+            border-bottom: 1px solid #292929;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 35px;
+        }
+
+        .menu {
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        .logo {
+            font-size: 34px;
+            font-weight: 300;
+            letter-spacing: 3px;
+        }
+
+        .logo span {
+            font-weight: 700;
+            color: #e50914;
+        }
+
+        .header-icons {
+            display: flex;
+            gap: 20px;
+            font-size: 22px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 45px auto;
+        }
+
+        .voltar {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+
+        .voltar:hover {
+            color: #e50914;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .subtitulo {
+            color: #999;
+            margin-bottom: 35px;
+        }
+
+
+        .checkout {
+            display: grid;
+            grid-template-columns: 1.5fr 0.8fr;
+            gap: 35px;
+        }
+
+
+
+        .card {
+            background: #151515;
+            border: 1px solid #2b2b2b;
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 20px;
+        }
+
+        .card h2 {
+            font-size: 20px;
+            margin-bottom: 22px;
+        }
+
+
+
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        select {
+            width: 100%;
+            padding: 14px;
+
+            background: #202020;
+            border: 1px solid #444;
+
+            color: #ffffff;
+
+            border-radius: 7px;
+
+            outline: none;
+
+            font-size: 15px;
+
+            margin-bottom: 20px;
+        }
+
+        select:focus {
+            border-color: #e50914;
+        }
+
+
+        .session-info {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .session-option {
+            background: #202020;
+            border: 1px solid #444;
+
+            color: #fff;
+
+            padding: 13px 20px;
+
+            border-radius: 7px;
+
+            cursor: pointer;
+
+            transition: .2s;
+        }
+
+        .session-option:hover {
+            border-color: #e50914;
+        }
+
+        .session-option.active {
+            background: #e50914;
+            border-color: #e50914;
+        }
+
+
+        .tela {
+            width: 80%;
+            margin: 0 auto 30px;
+
+            padding: 10px;
+
+            text-align: center;
+
+            background: #ffffff;
+            color: #000000;
+
+            border-radius: 50% 50% 5px 5px;
+
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        .cinema {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 9px;
+        }
+
+        .fileira {
+            display: flex;
+            gap: 8px;
+        }
+
+        .poltrona {
+            width: 34px;
+            height: 34px;
+
+            border: none;
+
+            border-radius: 6px 6px 3px 3px;
+
+            background: #303030;
+
+            color: #fff;
+
+            cursor: pointer;
+
+            font-size: 11px;
+
+            transition: .2s;
+        }
+
+        .poltrona:hover {
+            background: #777;
+        }
+
+        .poltrona.selecionada {
+            background: #e50914;
+        }
+
+        .poltrona.ocupada {
+            background: #666;
+
+            cursor: not-allowed;
+
+            opacity: .5;
+        }
+
+
+        .legenda {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 20px;
+
+            margin-top: 25px;
+
+            color: #aaa;
+
+            font-size: 13px;
+        }
+
+        .legenda-item {
+            display: flex;
+
+            align-items: center;
+
+            gap: 7px;
+        }
+
+        .quadrado {
+            width: 15px;
+            height: 15px;
+
+            border-radius: 3px;
+
+            background: #303030;
+        }
+
+        .quadrado.selecionado {
+            background: #e50914;
+        }
+
+        .quadrado.ocupado {
+            background: #666;
+        }
+
+
+        .resumo {
+            position: sticky;
+            top: 20px;
+        }
+
+        .linha {
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 15px;
+
+            padding: 12px 0;
+
+            border-bottom: 1px solid #292929;
+
+            color: #bbb;
+        }
+
+        .linha strong {
+            color: #ffffff;
+
+            text-align: right;
+        }
+
+        .total {
+            display: flex;
+
+            justify-content: space-between;
+
+            margin-top: 25px;
+
+            font-size: 21px;
+
+            font-weight: bold;
+        }
+
+        .preco {
+            color: #e50914;
+        }
+
+        .poster-resumo {
+            width: 100%;
+
+            max-height: 280px;
+
+            object-fit: contain;
+
+            margin-bottom: 20px;
+
+            border-radius: 8px;
+
+            background: #090909;
+        }
+
+        .finalizar {
+            width: 100%;
+
+            margin-top: 25px;
+
+            padding: 16px;
+
+            background: #e50914;
+
+            border: none;
+
+            border-radius: 7px;
+
+            color: #ffffff;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: .3s;
+        }
+
+        .finalizar:hover {
+            background: #ff1f2a;
+
+            transform: translateY(-2px);
+        }
+
+        .finalizar:disabled {
+            background: #444;
+
+            color: #888;
+
+            cursor: not-allowed;
+
+            transform: none;
+        }
+
+        .filmeSessao {
+            color: #e50914;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        @media (max-width: 800px) {
+
+            .checkout {
+                grid-template-columns: 1fr;
+            }
+
+            .resumo {
+                position: static;
+            }
+
+            .container {
+                width: 94%;
+            }
+
+            .fileira {
+                gap: 4px;
+            }
+
+            .poltrona {
+                width: 29px;
+                height: 29px;
+                font-size: 9px;
+            }
+
+            header {
+                padding: 0 15px;
+            }
+
+            .logo {
+                font-size: 26px;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <main class="container">
+        <a href="index.html" class="voltar">
+            <i class="bi bi-arrow-left"></i>
+            VOLTAR
+        </a>
+
+        <h1>
+            COMPRAR INGRESSO
+        </h1>
+
+        <p class="subtitulo">
+            Escolha sua sessão e selecione sua poltrona.
+        </p>
+
+
+        <div class="checkout">
+
+            <section>
+
+                <div class="card">
+
+                    <h2>
+                        <i class="bi bi-camera-reels"></i> Sessão
+                    </h2>
+                    <label>FILME</label>
+                    <div id="filmeSessao" style="color:#e50914; font-size:20px; font-weight:bold; margin-bottom:25px;">
+                    </div>
+
+
+                    <label for="data">
+                        DATA
+                    </label>
+
+                    <select id="data">
+
+                        <option value="">
+                            Selecione uma data
+                        </option>
+
+                        <option value="23/09/2026">
+                            23/09/2026
+                        </option>
+
+                        <option value="24/09/2026">
+                            24/09/2026
+                        </option>
+
+                        <option value="25/09/2026">
+                            25/09/2026
+                        </option>
+
+                        <option value="26/09/2026">
+                            26/09/2026
+                        </option>
+
+                    </select>
+
+
+                    <label>
+                        HORÁRIO
+                    </label>
+
+                    <div class="session-info">
+
+                        <button class="session-option" data-horario="14:00">
+                            14:00
+                        </button>
+
+                        <button class="session-option" data-horario="16:30">
+                            16:30
+                        </button>
+
+                        <button class="session-option" data-horario="19:00">
+                            19:00
+                        </button>
+
+                        <button class="session-option" data-horario="21:30">
+                            21:30
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="card">
+
+                    <h2>
+                        Escolha sua poltrona
+                    </h2>
+
+                    <div class="tela">
+                        TELA
+                    </div>
+
+
+                    <div class="cinema">
+
+                        <div class="fileira">
+
+                            <button class="poltrona">A1</button>
+                            <button class="poltrona">A2</button>
+                            <button class="poltrona">A3</button>
+                            <button class="poltrona">A4</button>
+                            <button class="poltrona">A5</button>
+                            <button class="poltrona">A6</button>
+
+                        </div>
+
+
+                        <div class="fileira">
+
+                            <button class="poltrona">B1</button>
+                            <button class="poltrona">B2</button>
+
+                            <button class="poltrona ocupada">
+                                B3
+                            </button>
+
+                            <button class="poltrona">B4</button>
+                            <button class="poltrona">B5</button>
+                            <button class="poltrona">B6</button>
+
+                        </div>
+
+
+                        <div class="fileira">
+
+                            <button class="poltrona">C1</button>
+                            <button class="poltrona">C2</button>
+                            <button class="poltrona">C3</button>
+
+                            <button class="poltrona ocupada">
+                                C4
+                            </button>
+
+                            <button class="poltrona">C5</button>
+                            <button class="poltrona">C6</button>
+
+                        </div>
+
+
+                        <div class="fileira">
+
+                            <button class="poltrona">D1</button>
+                            <button class="poltrona">D2</button>
+                            <button class="poltrona">D3</button>
+                            <button class="poltrona">D4</button>
+                            <button class="poltrona">D5</button>
+                            <button class="poltrona">D6</button>
+
+                        </div>
+
+
+                        <div class="fileira">
+
+                            <button class="poltrona">E1</button>
+                            <button class="poltrona">E2</button>
+                            <button class="poltrona">E3</button>
+                            <button class="poltrona">E4</button>
+                            <button class="poltrona">E5</button>
+                            <button class="poltrona">E6</button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="legenda">
+
+                        <div class="legenda-item">
+
+                            <span class="quadrado"></span>
+
+                            Disponível
+
+                        </div>
+
+
+                        <div class="legenda-item">
+
+                            <span class="quadrado selecionado"></span>
+
+                            Selecionada
+
+                        </div>
+
+
+                        <div class="legenda-item">
+
+                            <span class="quadrado ocupado"></span>
+
+                            Ocupada
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <aside>
+
+                <div class="card resumo">
+                    <h2>
+                        RESUMO DO PEDIDO
+                    </h2>
+                    <img id="posterResumo" class="poster-resumo">
+
+                    <div class="linha">
+
+                        <span>
+                            Tipo de sessão
+                        </span>
+
+                        <strong id="resumoSessao">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="linha">
+
+                        <span>
+                            Data
+                        </span>
+
+                        <strong id="resumoData">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="linha">
+
+                        <span>
+                            Horário
+                        </span>
+
+                        <strong id="resumoHorario">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="linha">
+
+                        <span>
+                            Poltrona
+                        </span>
+
+                        <strong id="resumoPoltrona">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="linha">
+
+                        <span>
+                            Ingresso
+                        </span>
+
+                        <strong>
+                            R$ 25,00
+                        </strong>
+
+                    </div>
+
+
+                    <div class="total">
+
+                        <span>
+                            TOTAL
+                        </span>
+
+                        <span class="preco">
+                            R$ 25,00
+                        </span>
+
+                    </div>
+
+
+                    <button class="finalizar" id="finalizarCompra" disabled>
+
+                        FINALIZAR COMPRA
+
+                    </button>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+
+    <script>
+        const filme = localStorage.getItem("filmeSelecionado") || "Filme não informado";
+
+        const poster =
+            localStorage.getItem("posterSelecionado") || "";
+
+        const sessionType =
+            localStorage.getItem("sessionType") || "";
+
+
+
+        document.getElementById("filmeSessao").textContent = filme;
+
+        const posterResumo =
+            document.getElementById("posterResumo");
+
+        if (poster) {
+
+            posterResumo.src = poster;
+
+        } else {
+
+            posterResumo.style.display = "none";
+
+        }
+
+        const resumoSessao =
+            document.getElementById("resumoSessao");
+
+        resumoSessao.textContent =
+            sessionType || "-";
+
+        const dataSelect =
+            document.getElementById("data");
+
+        const resumoData =
+            document.getElementById("resumoData");
+
+
+        dataSelect.addEventListener(
+            "change",
+            function () {
+
+                resumoData.textContent =
+                    this.value || "-";
+
+                verificarCompra();
+
+            }
+        );
+
+        const horarios =
+            document.querySelectorAll(".session-option");
+
+        const resumoHorario =
+            document.getElementById("resumoHorario");
+
+        let horarioSelecionado = "";
+
+
+        horarios.forEach(function (botao) {
+
+            botao.addEventListener(
+                "click",
+                function () {
+
+                    horarios.forEach(function (item) {
+
+                        item.classList.remove(
+                            "active"
+                        );
+
+                    });
+
+
+                    this.classList.add(
+                        "active"
+                    );
+
+
+                    horarioSelecionado =
+                        this.dataset.horario;
+
+
+                    resumoHorario.textContent =
+                        horarioSelecionado;
+
+
+                    verificarCompra();
+
+                }
+            );
+
+        });
+
+        const poltronas =
+            document.querySelectorAll(
+                ".poltrona:not(.ocupada)"
+            );
+
+
+        const resumoPoltrona =
+            document.getElementById(
+                "resumoPoltrona"
+            );
+
+
+        let poltronaSelecionada = "";
+
+
+        poltronas.forEach(function (poltrona) {
+
+            poltrona.addEventListener(
+                "click",
+                function () {
+
+                    poltronas.forEach(
+                        function (item) {
+
+                            item.classList.remove(
+                                "selecionada"
+                            );
+
+                        }
+                    );
+
+
+                    this.classList.add(
+                        "selecionada"
+                    );
+
+
+                    poltronaSelecionada =
+                        this.textContent.trim();
+
+
+                    resumoPoltrona.textContent =
+                        poltronaSelecionada;
+
+
+                    verificarCompra();
+
+                }
+            );
+
+        });
+
+
+        const finalizarCompra =
+            document.getElementById(
+                "finalizarCompra"
+            );
+
+
+        function verificarCompra() {
+
+            if (
+
+                sessionType !== "" &&
+
+                dataSelect.value !== "" &&
+
+                horarioSelecionado !== "" &&
+
+                poltronaSelecionada !== ""
+
+            ) {
+
+                finalizarCompra.disabled =
+                    false;
+
+            } else {
+
+                finalizarCompra.disabled =
+                    true;
+
+            }
+
+        }
+
+        finalizarCompra.addEventListener(
+            "click",
+            function () {
+
+                const ingresso = {
+
+                    filme: filme,
+
+                    poster: poster,
+
+                    sessao: sessionType,
+
+                    data: dataSelect.value,
+
+                    horario: horarioSelecionado,
+
+                    poltrona: poltronaSelecionada,
+
+                    preco: "R$ 25,00"
+
+                };
+
+
+                localStorage.setItem(
+                    "ingresso",
+                    JSON.stringify(ingresso)
+                );
+
+
+                alert(
+                    "Ingresso selecionado com sucesso!"
+                );
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>
